@@ -38,11 +38,15 @@ export default {
 
     if (position == 0 || position == '2nd' || position == -2 || position == 4) {
 
+      this.chain = [];
+
       throw new Error("You can\'t remove incorrect link!");
     }
 
     if (position <= 0 || position > this.chain.length ||
         position != Number(position) || position != Math.trunc(position) || typeof position != 'number' ) {
+
+          this.chain = [];
 
           throw new Error("You can\'t remove incorrect link!");
     }
@@ -54,6 +58,8 @@ export default {
       return this;
 
     }
+
+    this.chain = [];
 
     throw new Error("You can\'t remove incorrect link!");
     
